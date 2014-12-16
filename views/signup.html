@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container" id="main-content">
+  <h1>Sign Up</h1>
+  <div class="jumbotron" id="login">
+    <form method="POST" action="signup">  
+      <input class="form-control" name="username" placeholder="Username" required />
+      <input class="form-control" name="password" placeholder="Password" required />
+      <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
+  </div>
+
+</div><!-- /.container -->  
+
+{% endblock %}

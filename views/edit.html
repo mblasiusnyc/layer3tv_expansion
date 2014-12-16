@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container" id="main-content">
+  <h1>Edit Movie</h1>
+  <div class="jumbotron">
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Rating</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <form method="POST" action="/movies/edit/{{ movie._id.toString() }}">
+          <tr>
+            <td><input class="form-control" name="title" value="{{ movie.title }}"></input></td>
+            <td><input class="form-control" name="year" value="{{ movie.year }}"></input></td>
+            <td><input class="form-control" name="rating" value="{{ movie.rating }}"></input></td>
+            <td><button type="submit" class="btn btn-success">Done</button></td>
+          </tr>
+        </form>
+
+      </tbody>
+    </table>
+  </div>
+</div><!-- /.container -->  
+
+{% endblock %}

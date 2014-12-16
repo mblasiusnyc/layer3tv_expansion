@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container" id="main-content">
+  <h1>Favorite Movies</h1>
+  <div class="jumbotron">
+    <p class="lead">See the list of your top picks:</p><br>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Rating</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        {% for movie in movies %}
+          <tr>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.year }}</td>
+            <td>{{ movie.rating }}</td>
+            <td>
+              <a href="/movies/edit/{{ movie._id.toString() }}" class="btn btn-primary">Edit</a>
+              <a href="/movies/delete/{{ movie._id.toString() }}" class="btn btn-danger">Delete</a>
+            </td>
+          </tr>
+        {% endfor %}
+          <form method="POST" action="/movies/add">
+            <tr>
+              <th><input class="form-control" name="title" placeholder="Title" required /></th>
+              <th><input class="form-control" name="year" placeholder="Year" required /></th>
+              <th><input class="form-control" name="rating" placeholder="Rating" required /></th>
+              <th><button type="submit" class="btn btn-success">Add</button></th>
+            </tr>
+          </form>
+      </tbody>
+    </table>
+  </div>
+</div><!-- /.container -->  
+
+{% endblock %}

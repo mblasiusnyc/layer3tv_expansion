@@ -1,0 +1,42 @@
+body {
+  text-align: center;
+}
+
+#main-content {
+  margin-top: 50px;
+}
+
+h1 {
+  padding: 10px 0;
+}
+
+li {
+  list-style: none;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+td {
+  text-align: left;
+}
+
+tr:hover {
+
+}
+
+#sign-up-link {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+#login {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+input, button {
+  margin-bottom: 15px;
+}
